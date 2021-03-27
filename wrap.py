@@ -48,4 +48,7 @@ for x in src:
       pdfdata = f.read()
     print('[Info] 正在上传 `{}` 至 {}'.format(pdf, homework))
     session = login.login(username, password)
-    upload.upload(homework, session, os.path.split(pdf)[1], pdfdata)
+    # 在上传的文件名后增加学号
+    filename = os.path.split(pdf)[1]
+    filename = '{}-{}.pdf'.format(os.path.splitext(filename)[0], username)
+    upload.upload(homework, session, filename, pdfdata)

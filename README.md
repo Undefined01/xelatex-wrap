@@ -10,7 +10,7 @@
 
 2. 下载 `wrap.zip` 后解压，将 `wrap` 文件夹整体复制到 `xelatex` 目录中。此时原本的 `xelatex` 仍位于 `C:\texlive\2019\bin\win32\xelatex.exe`，而此 `wrapper` 中的 `xelatex` 应该位于 `C:\texlive\2019\bin\win32\wrap\xelatex.exe`。
 
-3. 设置环境变量，在 `PATH` 的最前方（`GUI`界面的最上方）添加目录 `C:\texlive\2019\bin\win32\wrap`。
+3. 设置环境变量，在 `PATH` 的最前方（`GUI`界面的最上方）添加目录 `C:\texlive\2019\bin\win32\wrap`，以保证执行 `xelatex` 时会调用 `wrapper` 中的 `xelatex` 而不是原本的 `xelatex`。
 
 4. 设置完成后，在 `cmd` 环境下运行 `where xelatex` 应该得到 `wrap` 中的 `xelatex` 显示在原本的 `xelatex` 的上方。如：
 
