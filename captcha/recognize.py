@@ -3,14 +3,17 @@ from .common import *
 import os
 import sys
 import numpy as np
-# import tensorflow.lite as tflite
 import tflite_runtime.interpreter as tflite
 
+basedir = sys.path[0]
+# 在 pyinstaller 打包后为 base_library.zip， 因此需要特殊处理
+if os.path.split(basedir)[1] == 'base_library.zip':
+  basedir = os.path.split(basedir)[0]
 MODEL_FILENAME = "model.tflite"
 
 
 def recognize(img):
-    interpreter = tflite.Interpreter(os.path.join(sys.path[0], MODEL_FILENAME))
+    interpreter = tflite.Interpreter(os.path.join(basedir, MODEL_FILENAME))
     interpreter.allocate_tensors()
     input_details = interpreter.get_input_details()
     output_details = interpreter.get_output_details()
