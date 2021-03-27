@@ -55,5 +55,4 @@ def login(username, password):
   #   raise Exception('登录失败')
   if res.text.find('loginerrors') != -1:
     raise Exception('登录失败')
-  print(sess.cookies['MoodleSession'])
   return sess.cookies['MoodleSession']

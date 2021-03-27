@@ -112,7 +112,6 @@ if __name__ == '__main__':
     raise getopt.GetoptError('参数不能为空')
   
   session = login.login(username, password)
-  dprint('session', session)
 
   with open(filename, 'rb') as f:
     filedata = f.read()
