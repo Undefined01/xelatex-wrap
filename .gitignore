@@ -1,0 +1,12 @@
+# python byte-compiled / optimized / dll files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# pyinstaller
+build/
+dist/
+*.spec
+*.manifest
+MANIFEST
